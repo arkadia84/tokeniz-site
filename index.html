@@ -127,6 +127,30 @@
   footer .links{display:flex;gap:20px;font-size:14px;flex-wrap:wrap}
   footer .links a:hover{color:var(--mint)}
   .powered{font-size:12.5px;color:var(--muted2)}
+
+  /* v4: ecosystem bar under hero */
+  .eco-bar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+  .eco-bar a{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(16,24,21,.7);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:700;color:var(--muted);transition:border-color .2s ease,color .2s ease,transform .2s ease}
+  .eco-bar a:hover{border-color:var(--mint);color:var(--mint);transform:translateY(-1px)}
+  .eco-bar i{width:6px;height:6px;border-radius:999px;background:var(--mint);display:inline-block}
+  /* v4: product stack */
+  .stack-card{display:flex;flex-direction:column}
+  .stack-card .tag{display:inline-block;align-self:flex-start;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mint);background:rgba(23,195,154,.08);border:1px solid rgba(23,195,154,.25);border-radius:999px;padding:4px 11px;margin-bottom:14px}
+  .stack-card .tag.soon{color:var(--warn);background:rgba(251,191,36,.08);border-color:rgba(251,191,36,.3)}
+  .stack-card .cta{margin-top:auto;padding-top:18px}
+  .stack-card .cta a{color:var(--mint);font-weight:700;font-size:14.5px;border-bottom:1px solid rgba(23,195,154,.35)}
+  /* v4: bands (membership / learn) */
+  .band{background:var(--s1);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:54px 0;text-align:center}
+  .band h3{font-size:clamp(22px,3vw,30px);font-weight:900;letter-spacing:-.02em}
+  .band p{color:var(--muted);max-width:620px;margin:14px auto 26px;font-size:15.5px}
+  /* v4: speaker */
+  .speaker .wrap{display:flex;gap:40px;align-items:center;flex-wrap:wrap;max-width:920px;margin:0 auto}
+  .speaker .bio{flex:1;min-width:300px}
+  .speaker h2{margin-bottom:16px}
+  .speaker p{color:var(--muted);font-size:15.5px;margin-bottom:12px}
+  .speaker ul{list-style:none;margin:18px 0 26px}
+  .speaker li{color:var(--muted);font-size:14.5px;padding:7px 0;border-bottom:1px solid rgba(38,53,49,.6)}
+  .speaker li b{color:var(--fg)}
   @media(max-width:640px){.nav-links a:not(.btn){display:none}}
 </style>
 </head>
@@ -137,7 +161,8 @@
     <div class="nav-links">
       <a href="#how">How it works</a>
       <a href="#why">Why on-chain</a>
-      <a href="#cases">Use cases</a>
+      <a href="#stack">Products</a>
+      <a href="#speaking">Speaking</a>
       <a class="btn btn-sm" href="#talk">Let's talk &rarr;</a>
     </div>
   </nav>
@@ -153,6 +178,14 @@
       <a class="btn btn-ghost" href="#demo">Request a demo</a>
     </div>
     <p class="micro">15 minutes, no pitch. Bring your hardest questions.</p>
+    <div class="eco-bar">
+      <a href="#stack-formation"><i></i>Company formation</a>
+      <a href="#stack-realestate"><i></i>Real estate</a>
+      <a href="#stack-community"><i></i>Community</a>
+      <a href="#stack-education"><i></i>Education</a>
+      <a href="#stack-agent"><i></i>AI agent</a>
+      <a href="#membership"><i></i>Member deals</a>
+    </div>
   </div>
 </header>
 
@@ -162,6 +195,23 @@
     <span><i></i>Tokenized equity</span><span><i></i>On-chain cap table</span><span><i></i>Global payment rails</span><span><i></i>DeFi-native treasury</span><span><i></i>Raise-ready from day one</span><span><i></i>USDC / USDT settlement</span>
   </div>
 </div>
+
+
+<section id="stack" class="center">
+  <div class="container">
+    <span class="kicker">THE TOKENIZ STACK</span>
+    <h2>One thesis. Six doors.</h2>
+    <p class="intro">Tokenization is a migration, not a product. Whatever brings you here — a company to form, a building to fractionalize, or just the itch to understand — there is a door for you. <b>Pick yours.</b></p>
+    <div class="grid" style="text-align:left">
+      <div class="card stack-card" id="stack-formation"><span class="tag">Self-serve app</span><h3>Atomise — create your company</h3><p>The app where companies are born on-chain: incorporation, tokenized equity, treasury — end to end, by yourself.</p><div class="cta"><a href="https://atomise.fun" target="_blank" rel="noopener">Open Atomise &rarr;</a></div></div>
+      <div class="card stack-card"><span class="tag">Done for you</span><h3>Formation &amp; consulting</h3><p>We structure and launch your on-chain company with you — entity, tokens, banking introductions, and a founder who has done it before sitting across the table.</p><div class="cta"><a href="https://calendar.app.google/ckyLxwEEyxrYgcgE6">Book a call &rarr;</a></div></div>
+      <div class="card stack-card" id="stack-realestate"><span class="tag">Real estate</span><h3>Propex — property on rails</h3><p>Tokenization infrastructure for real estate operators: fractional ownership, transparent records, automated distributions. Powered by the same thesis, built for buildings.</p><div class="cta"><a href="https://propex.app" target="_blank" rel="noopener">Explore Propex &rarr;</a></div></div>
+      <div class="card stack-card" id="stack-community"><span class="tag">Community</span><h3>The daily RWA signal</h3><p>Stablecoin and tokenization news with the noise removed — every story in one Telegram channel, with a one-line take on what it actually means for you.</p><div class="cta"><a href="https://niftly.app/join" target="_blank" rel="noopener">Join the community &rarr;</a></div></div>
+      <div class="card stack-card" id="stack-education"><span class="tag">Education</span><h3>Stablecoin 101</h3><p>Start from zero: what digital dollars are, why they matter, and how founders actually use them. First course of a growing curriculum.</p><div class="cta"><a href="https://niftly.app/stablecoin101" target="_blank" rel="noopener">Start learning &rarr;</a></div></div>
+      <div class="card stack-card" id="stack-agent"><span class="tag soon">In the lab</span><h3>AI agent for tokenization</h3><p>An AI copilot for tokenization businesses — analysis, structuring, execution. Currently in the lab. Launch lands first in the newsletter.</p><div class="cta"><a href="https://niftyfounder.com" target="_blank" rel="noopener">Follow the build &rarr;</a></div></div>
+    </div>
+  </div>
+</section>
 
 <section id="why" class="center">
   <div class="container">
@@ -216,6 +266,47 @@
       <span class="chip"><span class="live-dot"></span>Propex</span>
     </div>
     <p class="sub2">Powered by Propex marketplace technology</p>
+  </div>
+</div>
+
+<div class="band" id="membership">
+  <div class="container">
+    <span class="kicker">MEMBERSHIP</span>
+    <h3>Deals you only get from the inside.</h3>
+    <p>Members get the affiliate deals and partner perks we negotiate along the way — banking, tools, infrastructure — plus first access to everything new in the stack.</p>
+    <a class="btn" href="https://niftly.app/join" target="_blank" rel="noopener">Become a member &rarr;</a>
+  </div>
+</div>
+
+
+
+<section id="speaking" class="speaker">
+  <div class="container wrap">
+    <div class="bio">
+      <span class="kicker">SPEAKING</span>
+      <h2>Book Yacine on stage.</h2>
+      <p>Founder of Tokeniz. 15+ years in tech and crypto, operating from Bali — talking about tokenization the way practitioners do: what was paid, what broke, what worked.</p>
+      <ul>
+        <li><b>Built the rails:</b> Tokeniz, Atomise and Propex — company formation and real-estate tokenization in production</li>
+        <li><b>Structured for real:</b> Hong Kong Ltd, Indonesian PT PMA, on-chain entities via OtoCo</li>
+        <li><b>Speaks to both rooms:</b> crypto-native audiences and founders who have never held a token</li>
+        <li><b>Topics:</b> companies born on-chain &middot; RWA tokenization &middot; stablecoin rails for global founders</li>
+      </ul>
+      <div class="cta-row" style="justify-content:flex-start">
+        <a class="btn" href="https://calendar.app.google/ckyLxwEEyxrYgcgE6">Book a call &rarr;</a>
+        <a class="btn btn-ghost" href="https://t.me/nftydaddy">Telegram</a>
+        <a class="btn btn-ghost" href="https://wa.me/6588431019">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="container">
+    <span class="kicker">LEARN</span>
+    <h3>The Nifty Founder — the weekly letter.</h3>
+    <p>Where this whole thesis gets written first: one real move in the on-chain migration every week. Receipts, not theory.</p>
+    <a class="btn btn-ghost" href="https://niftyfounder.com" target="_blank" rel="noopener">Read the blog &rarr;</a>
   </div>
 </div>
 
