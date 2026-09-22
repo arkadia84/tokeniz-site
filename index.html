@@ -1,373 +1,294 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tokeniz — Launch for $99. Cofound with AI for $99/mo.</title>
-<meta name="description" content="Incorporate on-chain in minutes for $99, then bring on Hermes — your AI cofounder — for $99/mo. Built to shorten the odds against you." />
-<link rel="canonical" href="https://tokeniz.ai/" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://tokeniz.ai/" />
-<meta property="og:title" content="Tokeniz — Launch for $99. Cofound with AI for $99/mo." />
-<meta property="og:description" content="Incorporate on-chain in minutes for $99, then bring on Hermes — your AI cofounder — for $99/mo. Built to shorten the odds against you." />
-<meta property="og:image" content="https://tokeniz.ai/og-tokeniz.png" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Tokeniz — Launch for $99. Cofound with AI for $99/mo." />
-<meta name="twitter:description" content="Incorporate on-chain in minutes for $99, then bring on Hermes — your AI cofounder — for $99/mo. Built to shorten the odds against you." />
-<meta name="twitter:image" content="https://tokeniz.ai/og-tokeniz.png" />
-<link rel="icon" href="/favicon.ico" sizes="32x32" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Tokeniz","url":"https://tokeniz.ai","logo":"https://tokeniz.ai/apple-touch-icon.png","description":"Infrastructure for companies born on-chain — incorporate with tokenized equity from inception."}</script>
-<style>
-  :root{
-    --bg:#0b0f0d; --s1:#101815; --s2:#16211c; --line:#263531;
-    --fg:#eaf2ef; --muted:#93a59e; --muted2:#5f7069;
-    --primary:#0f8a6d; --primary-h:#0c6f57; --mint:#17c39a; --warn:#fbbf24;
-    --r:14px;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--fg);font-family:"Archivo","Inter",ui-sans-serif,system-ui,sans-serif;line-height:1.6;overflow-x:clip}
-  .container{max-width:1100px;margin:0 auto;padding:0 24px}
-  a{color:inherit;text-decoration:none}
-  section[id]{scroll-margin-top:88px}
-
-  /* nav */
-  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-  .logo{font-size:22px;font-weight:900;letter-spacing:-.02em}
-  .logo span{color:var(--mint)}
-  .nav-links{display:flex;gap:24px;align-items:center;font-size:14.5px;color:var(--muted)}
-  .nav-links a:hover{color:var(--fg)}
-  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:#fff;font-weight:700;border-radius:12px;padding:13px 24px;font-size:15px;border:none;cursor:pointer;transition:transform .2s ease, background .2s ease, box-shadow .2s ease}
-  .btn:hover{background:var(--primary-h);transform:translateY(-2px);box-shadow:0 12px 32px -12px rgba(23,195,154,.45)}
-  .btn-ghost{background:transparent;border:1px solid var(--line);color:var(--fg)}
-  .btn-ghost:hover{background:var(--s2);border-color:var(--mint);box-shadow:none;color:var(--mint)}
-  .btn-sm{padding:9px 18px;font-size:14px;border-radius:10px}
-
-  /* hero */
-  .hero{position:relative;text-align:center;padding:96px 0 80px;overflow:clip}
-  .hero::before{content:"";position:absolute;inset:-40% -20% auto;height:130%;background:
-    radial-gradient(600px 340px at 50% 0%, rgba(15,138,109,.28), transparent 70%),
-    radial-gradient(420px 260px at 78% 18%, rgba(23,195,154,.12), transparent 70%),
-    radial-gradient(420px 260px at 22% 22%, rgba(23,195,154,.08), transparent 70%);
-    pointer-events:none}
-  .hero .container{position:relative}
-  .badge{display:inline-flex;align-items:center;gap:9px;background:rgba(23,195,154,.08);border:1px solid rgba(23,195,154,.3);color:var(--mint);font-size:12px;font-weight:800;letter-spacing:.14em;padding:8px 18px;border-radius:999px;margin-bottom:32px}
-  .live-dot{position:relative;display:inline-block;width:8px;height:8px;border-radius:999px;background:var(--mint);animation:pulse 1.8s ease-out infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(23,195,154,.6)}70%{box-shadow:0 0 0 9px rgba(23,195,154,0)}100%{box-shadow:0 0 0 0 rgba(23,195,154,0)}}
-  h1{font-size:clamp(40px,6.4vw,72px);line-height:1.03;font-weight:900;letter-spacing:-.03em}
-  h1 .grad{background:linear-gradient(92deg,#17c39a 10%,#7ee8c9 55%,#0f8a6d 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .sub{max-width:660px;margin:28px auto 0;color:var(--muted);font-size:18px}
-  .sub b{color:var(--fg);font-weight:600}
-  .cta-row{display:flex;gap:14px;justify-content:center;margin-top:38px;flex-wrap:wrap}
-  .micro{margin-top:16px;color:var(--muted2);font-size:13.5px}
-
-  /* marquee trust strip */
-  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--s1);padding:15px 0;overflow:hidden;white-space:nowrap}
-  .track{display:inline-block;animation:marquee 30s linear infinite}
-  .strip:hover .track{animation-play-state:paused}
-  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-  .track span{display:inline-flex;align-items:center;gap:9px;margin:0 26px;font-size:14px;font-weight:600;color:var(--muted)}
-  .track i{width:6px;height:6px;border-radius:999px;background:var(--mint);display:inline-block}
-
-  section{padding:88px 0}
-  .kicker{display:inline-block;background:rgba(23,195,154,.08);border:1px solid rgba(23,195,154,.25);color:var(--mint);font-size:11.5px;font-weight:800;letter-spacing:.16em;padding:6px 15px;border-radius:999px;margin-bottom:20px}
-  h2{font-size:clamp(30px,4.4vw,44px);font-weight:900;letter-spacing:-.02em;line-height:1.12}
-  .center{text-align:center}
-  .intro{max-width:720px;margin:22px auto 0;color:var(--muted);font-size:16.5px}
-  .intro b{color:var(--fg)}
-
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:48px}
-  .card{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:28px;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease}
-  .card:hover{transform:translateY(-3px);box-shadow:0 14px 36px -14px rgba(0,0,0,.65);border-color:rgba(15,138,109,.55)}
-  .card h3{font-size:17.5px;margin-bottom:9px;font-weight:800}
-  .card p{color:var(--muted);font-size:14.5px}
-  .card .num{color:var(--mint);font-weight:900;font-size:12.5px;letter-spacing:.12em;display:block;margin-bottom:12px}
-  .closer{text-align:center;margin-top:36px;color:var(--muted);font-size:15.5px}
-  .closer a{color:var(--mint);font-weight:700;border-bottom:1px solid rgba(23,195,154,.35)}
-
-  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:18px;margin-top:48px}
-  .step{background:var(--s1);border:1px solid var(--line);border-radius:var(--r);padding:28px;transition:transform .2s ease, border-color .2s ease}
-  .step:hover{transform:translateY(-3px);border-color:rgba(15,138,109,.55)}
-  .step .n{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,rgba(23,195,154,.22),rgba(15,138,109,.12));color:var(--mint);display:flex;align-items:center;justify-content:center;font-weight:900;margin-bottom:16px;border:1px solid rgba(23,195,154,.25)}
-  .step h3{font-size:16.5px;margin-bottom:8px;font-weight:800}
-  .step p{color:var(--muted);font-size:14px}
-  .alt{background:var(--s1);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .alt .step,.alt .card{background:var(--s2)}
-
-  .ops{text-align:center;padding:52px 0;background:var(--s1);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .ops .label{font-size:11.5px;letter-spacing:.18em;color:var(--muted2);font-weight:800;margin-bottom:20px}
-  .chips{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-  .chip{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:999px;padding:10px 22px;font-weight:700;font-size:14.5px;background:var(--s2)}
-  .ops .sub2{margin-top:16px;color:var(--muted2);font-size:13px}
-
-  .talk{position:relative;overflow:clip}
-  .talk::before{content:"";position:absolute;inset:auto -20% -60%;height:120%;background:radial-gradient(560px 320px at 50% 100%, rgba(15,138,109,.22), transparent 70%);pointer-events:none}
-  .talk .wrap{position:relative;text-align:center;max-width:640px;margin:0 auto}
-  .talk p{color:var(--muted);margin-top:16px}
-  .talk .cta-row{margin-top:32px}
-
-  .disc{max-width:820px;margin:0 auto;color:var(--muted2);font-size:12.5px;text-align:center;line-height:1.7}
-
-  footer{border-top:1px solid var(--line);padding:42px 0;color:var(--muted)}
-  footer .cols{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
-  footer .logo{font-size:18px}
-  footer .links{display:flex;gap:20px;font-size:14px;flex-wrap:wrap}
-  footer .links a:hover{color:var(--mint)}
-  .powered{font-size:12.5px;color:var(--muted2)}
-
-  /* v4: ecosystem bar under hero */
-  .eco-bar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:34px}
-  .eco-bar a{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(16,24,21,.7);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:700;color:var(--muted);transition:border-color .2s ease,color .2s ease,transform .2s ease}
-  .eco-bar a:hover{border-color:var(--mint);color:var(--mint);transform:translateY(-1px)}
-  .eco-bar i{width:6px;height:6px;border-radius:999px;background:var(--mint);display:inline-block}
-  /* v5: app screenshot gallery */
-  .phone-grid{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:48px}
-  .phone{width:230px;border-radius:26px;overflow:hidden;border:1px solid var(--line);background:var(--s1);box-shadow:0 24px 60px -20px rgba(0,0,0,.7);transition:transform .25s ease, box-shadow .25s ease}
-  .phone:hover{transform:translateY(-6px);box-shadow:0 30px 70px -18px rgba(15,138,109,.35)}
-  .phone img{display:block;width:100%;height:auto}
-  .phone figcaption{padding:12px 14px 16px;font-size:12.5px;font-weight:700;color:var(--muted);text-align:center}
-  /* v4: product stack */
-  .stack-card{display:flex;flex-direction:column}
-  .stack-card .tag{display:inline-block;align-self:flex-start;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--mint);background:rgba(23,195,154,.08);border:1px solid rgba(23,195,154,.25);border-radius:999px;padding:4px 11px;margin-bottom:14px}
-  .stack-card .tag.soon{color:var(--warn);background:rgba(251,191,36,.08);border-color:rgba(251,191,36,.3)}
-  .stack-card .cta{margin-top:auto;padding-top:18px}
-  .stack-card .cta a{color:var(--mint);font-weight:700;font-size:14.5px;border-bottom:1px solid rgba(23,195,154,.35)}
-  /* v4: bands (membership / learn) */
-  .band{background:var(--s1);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:54px 0;text-align:center}
-  .band h3{font-size:clamp(22px,3vw,30px);font-weight:900;letter-spacing:-.02em}
-  .band p{color:var(--muted);max-width:620px;margin:14px auto 26px;font-size:15.5px}
-  /* v4: speaker */
-  .speaker .wrap{display:flex;gap:40px;align-items:center;flex-wrap:wrap;max-width:920px;margin:0 auto}
-  .speaker .bio{flex:1;min-width:300px}
-  .speaker h2{margin-bottom:16px}
-  .speaker p{color:var(--muted);font-size:15.5px;margin-bottom:12px}
-  .speaker ul{list-style:none;margin:18px 0 26px}
-  .speaker li{color:var(--muted);font-size:14.5px;padding:7px 0;border-bottom:1px solid rgba(38,53,49,.6)}
-  .speaker li b{color:var(--fg)}
-  @media(max-width:640px){.nav-links a:not(.btn){display:none}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tokeniz — Tokenization Consulting & Advisory</title>
+  <meta name="description" content="Turn what you already own into something investable, liquid, and global — without becoming a blockchain expert yourself. Tokenization consulting from Yacine Terai." />
+  <link rel="canonical" href="https://tokeniz.ai" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tokeniz.ai" />
+  <meta property="og:title" content="Tokeniz — Tokenization Consulting & Advisory" />
+  <meta property="og:description" content="Turn what you already own into something investable, liquid, and global — without becoming a blockchain expert yourself." />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-<div class="container">
-  <nav>
-    <a class="logo" href="#">Token<span>iz</span></a>
-    <div class="nav-links">
-      <a href="#how">How it works</a>
-      <a href="#why">Why on-chain</a>
-      <a href="#stack">Products</a>
-      <a href="#speaking">Speaking</a>
-      <a class="btn btn-sm" href="#talk">Let's talk &rarr;</a>
-    </div>
-  </nav>
-</div>
 
-<header class="hero">
-  <div class="container">
-    <span class="badge"><span class="live-dot"></span>COMPANIES, BORN ON-CHAIN</span>
-    <h1>Launch for $99.<br><span class="grad">Cofound with AI for $99/mo.</span></h1>
-    <p class="sub">Incorporate in minutes. Then bring on Hermes — your AI cofounder — <b>built to shorten the odds against you.</b></p>
-    <div class="cta-row">
-      <a class="btn" href="https://atomise.fun" target="_blank" rel="noopener">Launch on Atomise &rarr;</a>
-      <a class="btn btn-ghost" href="https://calendar.app.google/ckyLxwEEyxrYgcgE6">Book a call instead</a>
-    </div>
-    <p class="micro">Free to explore, no card required. Real entity, real tokens, real rails.</p>
-    <div class="eco-bar">
-      <a href="#stack-formation"><i></i>Company formation</a>
-      <a href="#stack-realestate"><i></i>Real estate</a>
-      <a href="#stack-community"><i></i>Community</a>
-      <a href="#stack-education"><i></i>Education</a>
-      <a href="#stack-agent"><i></i>AI cofounder</a>
-      <a href="#membership"><i></i>Member deals</a>
-    </div>
-  </div>
-</header>
-
-<div class="strip">
-  <div class="track">
-    <span><i></i>Tokenized equity</span><span><i></i>On-chain cap table</span><span><i></i>Global payment rails</span><span><i></i>DeFi-native treasury</span><span><i></i>Raise-ready from day one</span><span><i></i>USDC / USDT settlement</span>
-    <span><i></i>Tokenized equity</span><span><i></i>On-chain cap table</span><span><i></i>Global payment rails</span><span><i></i>DeFi-native treasury</span><span><i></i>Raise-ready from day one</span><span><i></i>USDC / USDT settlement</span>
-  </div>
-</div>
-
-
-<section id="preview" class="center">
-  <div class="container">
-    <span class="kicker">INSIDE THE APP</span>
-    <h2>This is what $99 buys you.</h2>
-    <p class="intro">No forms, no lawyer on retainer. Describe your setup in plain English and Atomise generates the on-chain structure, mints your cap table, and opens the door to raise. <b>Real screens, from the live app.</b></p>
-    <div class="phone-grid">
-      <figure class="phone"><img src="/app-launch.webp" alt="Atomise Founder Studio — describe your company setup and the app generates your on-chain structure" loading="lazy" width="560" height="1211"><figcaption>Describe it, Atomise structures it</figcaption></figure>
-      <figure class="phone"><img src="/app-raise.webp" alt="Atomise companies live on-chain with market cap and amount raised" loading="lazy" width="560" height="1211"><figcaption>Live cap tables, real raises</figcaption></figure>
-      <figure class="phone"><img src="/app-community.webp" alt="Atomise activity feed showing companies raising and paying distributions on-chain" loading="lazy" width="560" height="1211"><figcaption>Distributions, raises, activity</figcaption></figure>
-    </div>
-    <div class="cta-row" style="margin-top:44px">
-      <a class="btn" href="https://atomise.fun" target="_blank" rel="noopener">Open Atomise &rarr;</a>
-    </div>
-  </div>
-</section>
-
-<section id="stack" class="center">
-  <div class="container">
-    <span class="kicker">THE TOKENIZ STACK</span>
-    <h2>One thesis. Six doors.</h2>
-    <p class="intro">Tokenization is a migration, not a product. Whatever brings you here — a company to form, a building to fractionalize, or just the itch to understand — there is a door for you. <b>Pick yours.</b></p>
-    <div class="grid" style="text-align:left">
-      <div class="card stack-card" id="stack-formation"><span class="tag">Self-serve app</span><h3>Atomise — create your company</h3><p>The app where companies are born on-chain: incorporation, tokenized equity, treasury — end to end, by yourself.</p><div class="cta"><a href="https://atomise.fun" target="_blank" rel="noopener">Open Atomise &rarr;</a></div></div>
-      <div class="card stack-card"><span class="tag">Done for you</span><h3>Formation &amp; consulting</h3><p>We structure and launch your on-chain company with you — entity, tokens, banking introductions, and a founder who has done it before sitting across the table.</p><div class="cta"><a href="https://calendar.app.google/ckyLxwEEyxrYgcgE6">Book a call &rarr;</a></div></div>
-      <div class="card stack-card" id="stack-realestate"><span class="tag">Real estate</span><h3>Propex — property on rails</h3><p>Tokenization infrastructure for real estate operators: fractional ownership, transparent records, automated distributions. Powered by the same thesis, built for buildings.</p><div class="cta"><a href="https://propex.app" target="_blank" rel="noopener">Explore Propex &rarr;</a></div></div>
-      <div class="card stack-card" id="stack-community"><span class="tag">Community</span><h3>The daily RWA signal</h3><p>Stablecoin and tokenization news with the noise removed — every story in one Telegram channel, with a one-line take on what it actually means for you.</p><div class="cta"><a href="https://niftly.app/join" target="_blank" rel="noopener">Join the community &rarr;</a></div></div>
-      <div class="card stack-card" id="stack-education"><span class="tag">Education</span><h3>Stablecoin 101</h3><p>Start from zero: what digital dollars are, why they matter, and how founders actually use them. First course of a growing curriculum.</p><div class="cta"><a href="https://niftly.app/stablecoin101" target="_blank" rel="noopener">Start learning &rarr;</a></div></div>
-      <div class="card stack-card" id="stack-agent"><span class="tag soon">Coming very soon</span><h3>Hermes — your AI cofounder</h3><p>$99/mo. Built to do the work solo founders skip — fundraising prep, ops discipline, the unsexy stuff that decides who survives. Shortens the odds against you.</p><div class="cta"><a href="https://niftly.app/join" target="_blank" rel="noopener">Get early access &rarr;</a></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="why" class="center">
-  <div class="container">
-    <span class="kicker">THE THESIS</span>
-    <h2>Why be born on-chain?</h2>
-    <p class="intro">Most founders bolt crypto onto their company later — a wallet here, a token there. That's backwards. <b>Retrofitting ownership is expensive; programming it from inception is nearly free.</b> The companies that win the next decade will be born on-chain, because equity that lives on rails can do things paper equity never could.</p>
-    <div class="grid" style="text-align:left">
-      <div class="card"><span class="num">01</span><h3>Raise-ready from day one</h3><p>Your cap table is already tokenized. When it's time to raise, you issue tokens to investors — no re-papering, no six-week legal scramble. From handshake to allocation in clicks, not months.</p></div>
-      <div class="card"><span class="num">02</span><h3>Every asset becomes collateral</h3><p>Tokenized shares, revenue streams, IP — once they're on-chain, they're assets you can borrow against. Your company stops being a filing cabinet and becomes a balance sheet you can actually use.</p></div>
-      <div class="card"><span class="num">03</span><h3>Composability</h3><p>Your company plugs into the on-chain economy: payments, escrow, vesting, lending — programmable building blocks that snap together. One integration away from thousands of protocols.</p></div>
-      <div class="card"><span class="num">04</span><h3>Fractionalization</h3><p>Split ownership as finely as you need. Advisors, early team, micro-investors — allocate precise slices of equity without a lawyer on retainer.</p></div>
-      <div class="card"><span class="num">05</span><h3>Global payment rails</h3><p>Accept USDC/USDT from anywhere, settle in seconds, pay contributors worldwide. No SWIFT, no correspondent banks, no "please allow 3&ndash;5 business days."</p></div>
-      <div class="card"><span class="num">06</span><h3>Natively DeFi-ready</h3><p>Treasury yield, on-chain credit, liquidity for your equity — DeFi becomes your company's financial stack, not an afterthought bolted on in year three.</p></div>
-    </div>
-    <p class="closer">And that's the short list. The rest is easier to show than tell — <a href="https://atomise.fun" target="_blank" rel="noopener">see it live on Atomise</a>.</p>
-  </div>
-</section>
-
-<section id="how" class="center alt">
-  <div class="container">
-    <span class="kicker">HOW IT WORKS</span>
-    <h2>From idea to on-chain company.<br>Four steps.</h2>
-    <div class="steps" style="text-align:left">
-      <div class="step"><div class="n">1</div><h3>Incorporate on-chain</h3><p>A real legal entity — not a DAO cosplay. Your company is formed with its ownership minted as tokens: legally enforceable, digitally native.</p></div>
-      <div class="step"><div class="n">2</div><h3>Equity tokenized from inception</h3><p>Founders, advisors, vesting schedules — your cap table lives on-chain from the first block. Programmed, not promised.</p></div>
-      <div class="step"><div class="n">3</div><h3>Banking + payment rails</h3><p>Business banking through our fintech partners, with stablecoin rails built in. Digital dollars by default, fiat when you need it.</p></div>
-      <div class="step"><div class="n">4</div><h3>Operate, raise, compound</h3><p>Run distributions, collateralize assets, onboard investors — from one dashboard, verifiable by anyone you choose to show.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="cases" class="center">
-  <div class="container">
-    <span class="kicker">USE CASES</span>
-    <h2>If it has value, it can live on-chain.</h2>
-    <div class="grid" style="text-align:left">
-      <div class="card"><h3>Startups &amp; Founders</h3><p>Incorporate with tokenized equity from day one. Raise from global investors, vest your team on-chain, and keep your cap table as clean as your code.</p></div>
-      <div class="card"><h3>Real Estate</h3><p>Tokenize rental properties, development projects, or commercial real estate. Fractional ownership with automated yield distribution.</p></div>
-      <div class="card"><h3>Equity &amp; Cap Tables</h3><p>Put your cap table on-chain. Issue tokenized shares, manage vesting schedules, and enable secondary trading.</p></div>
-      <div class="card"><h3>Alternative Assets</h3><p>Art, collectibles, commodities, IP rights — tokenize any asset class with compliant issuance and global distribution.</p></div>
-      <div class="card"><h3>Fund Structures</h3><p>Tokenize fund units for real estate funds, VC funds, or SPVs. Automated distributions and investor reporting.</p></div>
-    </div>
-  </div>
-</section>
-
-<div class="ops">
-  <div class="container">
-    <div class="label">LIVE OPERATORS USING TOKENIZ INFRASTRUCTURE</div>
-    <div class="chips">
-      <span class="chip"><span class="live-dot"></span>BaliRealTX</span>
-      <span class="chip"><span class="live-dot"></span>Century21</span>
-      <span class="chip"><span class="live-dot"></span>Propex</span>
-    </div>
-    <p class="sub2">Powered by Propex marketplace technology</p>
-  </div>
-</div>
-
-<div class="band" id="membership">
-  <div class="container">
-    <span class="kicker">MEMBERSHIP</span>
-    <h3>Deals you only get from the inside.</h3>
-    <p>Members get the affiliate deals and partner perks we negotiate along the way — banking, tools, infrastructure — plus first access to everything new in the stack.</p>
-    <a class="btn" href="https://niftly.app/join" target="_blank" rel="noopener">Become a member &rarr;</a>
-  </div>
-</div>
-
-
-
-<section id="speaking" class="speaker">
-  <div class="container wrap">
-    <div class="bio">
-      <span class="kicker">SPEAKING</span>
-      <h2>Book Yacine on stage.</h2>
-      <p>Founder of Tokeniz. 15+ years in tech and crypto, operating from Bali — talking about tokenization the way practitioners do: what was paid, what broke, what worked.</p>
-      <ul>
-        <li><b>Built the rails:</b> Tokeniz, Atomise and Propex — company formation and real-estate tokenization in production</li>
-        <li><b>Structured for real:</b> Hong Kong Ltd, Indonesian PT PMA, on-chain entities via OtoCo</li>
-        <li><b>Speaks to both rooms:</b> crypto-native audiences and founders who have never held a token</li>
-        <li><b>Topics:</b> companies born on-chain &middot; RWA tokenization &middot; stablecoin rails for global founders</li>
-      </ul>
-      <div class="cta-row" style="justify-content:flex-start">
-        <a class="btn" href="https://calendar.app.google/ckyLxwEEyxrYgcgE6">Book a call &rarr;</a>
-        <a class="btn btn-ghost" href="https://t.me/nftydaddy">Telegram</a>
-        <a class="btn btn-ghost" href="https://wa.me/6588431019">WhatsApp</a>
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">Token<span>iz</span></a>
+      <div class="nav-desktop">
+        <a href="#method" class="nav-link">Method</a>
+        <a href="#cases" class="nav-link">Case Studies</a>
+        <a href="#mastermind" class="nav-link">Mastermind</a>
+        <a href="#apply" class="nav-link nav-cta">Apply</a>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<div class="band">
-  <div class="container">
-    <span class="kicker">LEARN</span>
-    <h3>The Nifty Founder — the weekly letter.</h3>
-    <p>Where this whole thesis gets written first: one real move in the on-chain migration every week. Receipts, not theory.</p>
-    <a class="btn btn-ghost" href="https://niftyfounder.com" target="_blank" rel="noopener">Read the blog &rarr;</a>
-  </div>
-</div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="tag">Tokenization Consulting &amp; Advisory</div>
+      <h1>Turn what you already own into something investable, liquid, and global<br /><em>— without becoming a blockchain expert yourself.</em></h1>
+      <p class="hero-sub">
+        I help asset owners, founders, and family offices structure the right wrapper, in the right
+        jurisdiction, on the right rails — built on 10 years in Web3, two live platforms, and a track
+        record of getting this right the first time.
+      </p>
+      <div class="hero-cta-wrap">
+        <a href="#apply" class="btn btn-primary btn-xl">Apply for a Strategy Session →</a>
+        <span class="hero-note">30 minutes · By application · No pitch, just a diagnosis</span>
+      </div>
+    </div>
+  </section>
 
-<section id="talk" class="talk">
-  <div class="container wrap">
-    <span class="kicker">LET'S TALK</span>
-    <h2>Ready to build on-chain?</h2>
-    <p>Book a 15-minute call — or message me directly if you're the instant-chat type and awake in my timezone (GMT+8, Bali).</p>
-    <div class="cta-row">
-      <a class="btn" href="https://calendar.app.google/ckyLxwEEyxrYgcgE6">Book a call &rarr;</a>
-      <a class="btn btn-ghost" href="https://t.me/nftydaddy">Message on Telegram</a>
-      <a class="btn btn-ghost" href="https://wa.me/6588431019">Message on WhatsApp</a>
+  <!-- PROOF STRIP -->
+  <div class="trust-strip">
+    <div class="container trust-inner">
+      <div class="trust-item"><span class="trust-dot"></span>13,000+ LinkedIn</div>
+      <div class="trust-item"><span class="trust-dot"></span>1,800 Nifty Founder subscribers</div>
+      <div class="trust-item"><span class="trust-dot"></span>10 years in Web3</div>
+      <div class="trust-item"><span class="trust-dot"></span>$287M+ raised across past ventures</div>
     </div>
   </div>
-</section>
 
-<section style="padding-top:0">
-  <div class="container">
-    <p class="disc">Primarily for non-US based founders and asset owners. US persons may have additional regulatory and tax obligations. Always consult a qualified professional.<br><br>
-    Disclaimer: Tokeniz provides tokenization infrastructure and technology. This is not legal, tax, investment, or financial advice. Tokenized assets involve risks including but not limited to: regulatory uncertainty, liquidity risk, smart contract risk, and potential loss of value. Tokenized shares may qualify as securities depending on your structure and jurisdiction — we structure with that in mind, and you should always take independent legal advice. Cryptocurrency and stablecoin transactions are irreversible and subject to market volatility.</p>
-  </div>
-</section>
+  <!-- PROBLEM -->
+  <section class="problem-bg">
+    <div class="container">
+      <div class="section-head">
+        <h2>You already know something is changing.</h2>
+      </div>
+      <div class="cards-3">
+        <div class="card">
+          <div class="card-eyebrow">Illiquid</div>
+          <p>Your asset is valuable but stuck. Real estate, a fund, a revenue-generating business — worth real money, but slow to sell, hard to split, and closed off to most of the capital that would want in.</p>
+        </div>
+        <div class="card">
+          <div class="card-eyebrow">Invisible to capital</div>
+          <p>Your business is investable, but not legible. Investors can't easily see the numbers, verify the ownership, or move money in and out without friction — so they don't.</p>
+        </div>
+        <div class="card">
+          <div class="card-eyebrow">The wrong map</div>
+          <p>You know something is changing — tokenization, digital ownership, programmable finance — but not which wrapper, which jurisdiction, or which partner actually fits your situation. Guessing wrong here is expensive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <div class="container cols">
-    <div>
-      <div class="logo">Token<span style="color:var(--mint)">iz</span></div>
-      <div style="font-size:13.5px;color:var(--muted2);margin-top:4px">Infrastructure for companies born on-chain.</div>
+  <!-- THE SHIFT -->
+  <section class="shift">
+    <div class="container narrow">
+      <p class="shift-text">
+        There's a shared, permanent record of ownership and cash flow now — the modern equivalent of a
+        share certificate or a title deed, except it's programmable and it moves instantly, anywhere in
+        the world. That's what makes an illiquid asset investable, and an invisible business legible to
+        the capital that wants in.
+      </p>
     </div>
-    <div class="links">
-      <a href="#talk">Need a company? Let's talk &rarr;</a>
-      <a href="https://propex.app">Propex</a>
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
+  </section>
+
+  <!-- METHOD: THE ACTIVATION FRAMEWORK -->
+  <section id="method" class="method">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">The Method</div>
+        <h2>The Activation Framework</h2>
+        <p class="section-sub">A named, repeatable method — not a menu of services.</p>
+      </div>
+      <div class="framework-grid">
+        <div class="framework-step">
+          <div class="framework-num">1</div>
+          <h3>Diagnose</h3>
+          <p>We map what you have, what you're trying to achieve, and which wrapper and jurisdiction actually fit — not the ones that are trendy, the ones that are right for your asset, your buyers, and your timeline.</p>
+        </div>
+        <div class="framework-step">
+          <div class="framework-num">2</div>
+          <h3>Structure</h3>
+          <p>We put the legal and technical architecture in place: the entity, the compliance path, and the record-keeping system that makes your asset provably yours and provably transferable.</p>
+        </div>
+        <div class="framework-step">
+          <div class="framework-num">3</div>
+          <h3>Activate</h3>
+          <p>We issue, distribute, or list — whatever "live" looks like for your asset — so it's actually usable by the investors, partners, or buyers you're trying to reach.</p>
+        </div>
+        <div class="framework-step">
+          <div class="framework-num">4</div>
+          <h3>Scale</h3>
+          <p>We keep the door open: ongoing compliance, expanded capital access, and liquidity as your asset (or your next one) grows.</p>
+        </div>
+      </div>
+      <p class="framework-footnote">This is the same method behind both Propex and Atomise — see it applied below.</p>
     </div>
-    <div class="powered" id="powered" style="cursor:default;user-select:none">&copy; Tokeniz</div>
-  </div>
-</footer>
-<script>
-(function () {
-  // Secret shortcut: 3 quick taps on the footer credit opens the live app.
-  var taps = [];
-  document.getElementById("powered").addEventListener("click", function () {
-    var now = Date.now();
-    taps = taps.filter(function (t) { return now - t < 1500; });
-    taps.push(now);
-    if (taps.length >= 3) { taps = []; window.open("https://atomise.fun", "_blank", "noopener"); }
-  });
-})();
-</script>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section id="cases" class="cases">
+    <div class="container">
+      <div class="section-head">
+        <h2>Proof, not products</h2>
+      </div>
+      <div class="cases-grid">
+        <a class="case-card" href="https://propex.app" target="_blank" rel="noopener noreferrer">
+          <div class="case-tag">Real estate, tokenized</div>
+          <h3>Propex</h3>
+          <p>Real estate is the textbook illiquid asset: valuable, slow to sell, hard to split. Propex applies the Activation Framework to property — with operators like Bali Realty X and Century21 Thailand already live on it.</p>
+          <span class="case-link">See how it works →</span>
+        </a>
+        <a class="case-card" href="https://atomise.fun" target="_blank" rel="noopener noreferrer">
+          <div class="case-tag">Any company, born on-chain</div>
+          <h3>Atomise</h3>
+          <p>A business is only investable if its ownership and structure are legible from day one. Atomise applies the same framework to company formation itself — any business, investable and online in days.</p>
+          <span class="case-link">See how it works →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section class="who">
+    <div class="container narrow">
+      <h2>Who this is for</h2>
+      <ul class="who-list">
+        <li>You own real estate, a fund, or a revenue-generating business worth structuring for capital access</li>
+        <li>You're a founder raising, or about to raise</li>
+        <li>You're a family office or allocator exploring digital assets and want it done right the first time</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- OFFER LADDER -->
+  <section id="mastermind" class="ladder">
+    <div class="container">
+      <div class="section-head">
+        <h2>Work with me</h2>
+      </div>
+      <div class="ladder-grid">
+        <div class="ladder-card">
+          <div class="ladder-tier">Strategy Session</div>
+          <p>A 30-minute diagnostic. We look at your asset or venture and figure out, together, whether — and how — the Activation Framework applies to you.</p>
+          <a href="#apply" class="ladder-cta">Apply for a Strategy Session →</a>
+        </div>
+        <div class="ladder-card ladder-card-featured">
+          <div class="ladder-tier">Advisory Engagement</div>
+          <p>A scoped project applying the full Activation Framework to your asset: the right wrapper, the right jurisdiction, and a clear path to activation. Scoped after your Strategy Session — every engagement is different.</p>
+        </div>
+        <div class="ladder-card">
+          <div class="ladder-tier">The Activation Framework Mastermind</div>
+          <p>A cohort for operators doing this together — structure, activate, and scale, with peer accountability and direct access. Not open yet.</p>
+          <form id="waitlist-form" class="waitlist-form">
+            <input type="email" name="email" placeholder="you@company.com" required />
+            <button type="submit" class="ladder-cta">Join the waitlist →</button>
+          </form>
+          <p class="waitlist-note" id="waitlist-note"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="social-proof">
+    <div class="container narrow">
+      <p>
+        The reach and the track record: 13,000+ LinkedIn followers, a co-admin'd community of ~100,000,
+        ~1,800 Nifty Founder subscribers, and live operators Bali Realty X and Century21 Thailand
+        already running on the framework via Propex.
+      </p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="container narrow">
+      <h2>About Yacine</h2>
+      <p>
+        I grew up around cross-border trading — my family brokered palm oil between Asia and Africa —
+        so I learned early that the hardest part of moving value is never the asset, it's the rails it
+        moves on. I've spent 10 years building those rails in Web3: raising capital, launching
+        platforms, and now running Tokeniz, Propex, and Atomise. I write about all of it, unfiltered,
+        in The Nifty Founder.
+        <a href="https://linkedin.com/in/yacineterai" target="_blank" rel="noopener noreferrer">Full background on LinkedIn →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container narrow">
+      <h2>FAQ</h2>
+      <div class="faq-item">
+        <h3>Is this legal? Is it securities-compliant?</h3>
+        <p>Every engagement is structured with compliance in mind for your specific jurisdiction and asset. I'm not a lawyer, and this isn't legal or financial advice — part of the Activation Framework is knowing when and where you need independent counsel, and getting you to the right one.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do I need to already understand blockchain?</h3>
+        <p>No. That's the point — you shouldn't have to. My job is to translate this into decisions you can make with confidence, not to teach you the technology.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How long does an engagement take?</h3>
+        <p>It depends on the asset and the jurisdiction — we scope a realistic timeline together in your Strategy Session before anything starts.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if my asset isn't a fit?</h3>
+        <p>I'll tell you plainly on the call. Not everything should be structured this way, and I'd rather tell you that for free than take a fee for the wrong project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="apply" class="final-cta">
+    <div class="container narrow">
+      <h2>Ready to find out if this is right for your asset?</h2>
+      <p>
+        Apply for a 30-minute Strategy Session. Tell me a bit about what you're working with, and I'll
+        tell you plainly whether the Activation Framework fits — and if it does, what it would take.
+      </p>
+      <form id="apply-form" class="apply-form">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="email" name="email" placeholder="Email" required />
+        </div>
+        <div class="form-row">
+          <input type="text" name="asset_type" placeholder="Asset / business type" required />
+          <input type="text" name="stage" placeholder="Rough size or stage" />
+        </div>
+        <input type="text" name="timeline" placeholder="Timeline (e.g. this quarter, exploring)" />
+        <button type="submit" class="btn btn-primary btn-xl">Apply &amp; Book My Session →</button>
+      </form>
+      <p class="apply-note" id="apply-note"></p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-logo">Token<span>iz</span></div>
+        <div class="footer-note">Tokenization consulting &amp; advisory.</div>
+      </div>
+      <div class="footer-links">
+        <a href="https://propex.app" target="_blank" rel="noopener noreferrer">Propex</a>
+        <a href="https://atomise.fun" target="_blank" rel="noopener noreferrer">Atomise</a>
+        <a href="https://niftyfounder.com" target="_blank" rel="noopener noreferrer">The Nifty Founder</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="mailto:hello@tokeniz.ai">hello@tokeniz.ai</a>
+      </div>
+    </div>
+    <div class="container">
+      <p class="disclaimer">
+        Disclaimer: Tokeniz provides tokenization advisory and technology guidance. This is not legal,
+        tax, investment, or financial advice. Tokenized assets involve risks including regulatory
+        uncertainty, liquidity risk, and potential loss of value. Always take independent legal and
+        financial advice before structuring or transacting.
+      </p>
+      <p class="copyright">© 2026 Tokeniz. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
 </body>
 </html>

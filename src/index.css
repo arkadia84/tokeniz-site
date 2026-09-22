@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 99%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 231 80% 66%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 20% 10%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 160 84% 39%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 231 80% 66%;
+
+    --secondary-purple: 270 38% 46%;
+
+    --radius: 0.625rem;
+
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 220 10% 46%;
+    --sidebar-primary: 220 20% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 220 20% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 231 80% 66%;
+
+    --bubble-agent: 220 14% 96%;
+    --bubble-agent-foreground: 220 20% 10%;
+    --bubble-user: 231 80% 66%;
+    --bubble-user-foreground: 0 0% 100%;
+
+    --font-base: 15px;
+  }
+
+  .dark {
+    --background: 224 20% 6%;
+    --foreground: 210 20% 95%;
+
+    --card: 224 18% 10%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 224 18% 10%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 231 80% 70%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 224 14% 14%;
+    --secondary-foreground: 210 20% 95%;
+
+    --muted: 224 14% 14%;
+    --muted-foreground: 220 10% 54%;
+
+    --accent: 160 84% 44%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 224 14% 16%;
+    --input: 224 14% 16%;
+    --ring: 231 80% 70%;
+
+    --secondary-purple: 270 38% 50%;
+
+    --success: 160 84% 44%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --sidebar-background: 224 18% 8%;
+    --sidebar-foreground: 220 10% 54%;
+    --sidebar-primary: 231 80% 70%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 224 14% 14%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 224 14% 16%;
+    --sidebar-ring: 231 80% 70%;
+
+    --bubble-agent: 224 14% 14%;
+    --bubble-agent-foreground: 210 20% 95%;
+    --bubble-user: 231 80% 70%;
+    --bubble-user-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: var(--font-base);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    backdrop-filter: blur(24px);
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    background-color: hsl(var(--card));
+    opacity: 0.95;
+  }
+}

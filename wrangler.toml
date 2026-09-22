@@ -1,0 +1,8 @@
+name = "tokeniz-consulting"
+compatibility_date = "2026-09-22"
+pages_build_output_dir = "."
+
+[[d1_databases]]
+binding = "DB"
+database_name = "tokeniz-consulting"
+database_id = "2470e4a6-8cab-4c3c-aaf7-40241345de30"
