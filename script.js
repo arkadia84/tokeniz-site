@@ -11,6 +11,7 @@ function handleForm(formEl, endpoint, noteEl, { onSuccess } = {}) {
     const originalText = button ? button.textContent : "";
     if (button) { button.disabled = true; button.textContent = "Sending…"; }
     noteEl.textContent = "";
+    noteEl.classList.remove("note-error");
 
     const data = Object.fromEntries(new FormData(formEl).entries());
 
@@ -25,7 +26,8 @@ function handleForm(formEl, endpoint, noteEl, { onSuccess } = {}) {
       if (onSuccess) onSuccess();
       else noteEl.textContent = "Got it — thank you.";
     } catch (err) {
-      noteEl.textContent = "Something went wrong. Please try again or email hello@tokeniz.ai directly.";
+      noteEl.textContent = "Something went wrong — your submission was not saved. Please try again or email hello@tokeniz.ai directly.";
+      noteEl.classList.add("note-error");
     } finally {
       if (button) { button.disabled = false; button.textContent = originalText; }
     }
@@ -39,8 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("apply-note"),
     {
       onSuccess: () => {
-        document.getElementById("apply-note").textContent = "Thanks — redirecting you to book your session…";
-        setTimeout(() => { window.location.href = CALENDAR_URL; }, 1200);
+        const form = document.getElementById("apply-form");
+        const success = document.getElementById("apply-success");
+        const link = document.getElementById("apply-success-link");
+        form.hidden = true;
+        link.href = CALENDAR_URL;
+        success.hidden = false;
+        success.scrollIntoView({ behavior: "smooth", block: "center" });
+        setTimeout(() => { window.location.href = CALENDAR_URL; }, 2500);
       },
     }
   );
@@ -51,7 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("waitlist-note"),
     {
       onSuccess: () => {
-        document.getElementById("waitlist-note").textContent = "You're on the list — I'll be in touch when it opens.";
+        const form = document.getElementById("waitlist-form");
+        const success = document.getElementById("waitlist-success");
+        form.hidden = true;
+        success.hidden = false;
       },
     }
   );
