@@ -264,10 +264,28 @@
           <input type="email" name="email" placeholder="Email" required />
         </div>
         <div class="form-row">
-          <input type="text" name="asset_type" placeholder="Asset / business type" required />
-          <input type="text" name="stage" placeholder="Rough size or stage" />
+          <select name="asset_type" required>
+            <option value="" disabled selected>Industry</option>
+            <option value="Real estate">Real estate</option>
+            <option value="Private equity / venture capital">Private equity / venture capital</option>
+            <option value="Commodities &amp; trading">Commodities &amp; trading</option>
+            <option value="Investment fund / asset management">Investment fund / asset management</option>
+            <option value="Operating business">Operating business</option>
+            <option value="Other">Other</option>
+          </select>
+          <select name="stage">
+            <option value="" disabled selected>Annual revenue</option>
+            <option value="Below $100K">Below $100K</option>
+            <option value="$100K–$1M">$100K–$1M</option>
+            <option value="Over $1M">Over $1M</option>
+          </select>
         </div>
-        <input type="text" name="timeline" placeholder="Timeline (e.g. this quarter, exploring)" />
+        <select name="timeline">
+          <option value="" disabled selected>Where are you at?</option>
+          <option value="Just exploring">Just exploring</option>
+          <option value="I know what I need">I know what I need</option>
+          <option value="I need guidance">I need guidance</option>
+        </select>
         <button type="submit" class="btn btn-primary btn-xl">Apply &amp; Book My Session →</button>
       </form>
       <p class="apply-note" id="apply-note"></p>

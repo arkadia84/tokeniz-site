@@ -203,8 +203,8 @@ section { padding: 88px 0; }
 .about-content .about-text p { margin: 0; }
 .about-photo { flex: 0 0 auto; }
 .about-photo img {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   max-width: 350px;
   max-height: 350px;
   object-fit: cover;
@@ -212,8 +212,8 @@ section { padding: 88px 0; }
   display: block;
 }
 @media (max-width: 640px) {
-  .about-content { flex-direction: column-reverse; gap: 20px; }
-  .about-photo img { width: 150px; height: 150px; }
+  .about-content { flex-direction: column; align-items: center; gap: 20px; }
+  .about-photo img { width: 130px; height: 130px; }
 }
 .faq h2 { text-align: center; margin-bottom: 32px; }
 .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
@@ -226,10 +226,14 @@ section { padding: 88px 0; }
 .final-cta > .container > p { color: var(--muted); margin-bottom: 32px; }
 .apply-form { display: flex; flex-direction: column; gap: 12px; text-align: left; }
 .form-row { display: flex; gap: 12px; }
-.form-row input, .apply-form > input {
+.form-row input, .apply-form > input,
+.form-row select, .apply-form > select {
   flex: 1; padding: 13px 14px; border-radius: 10px;
   border: 1px solid var(--border); background: var(--bg); color: var(--text); font-family: inherit; font-size: 0.95rem;
 }
+.apply-form select { appearance: none; cursor: pointer; }
+.apply-form select:invalid { color: var(--muted); }
+.apply-form select option { color: var(--text); background: var(--bg); }
 .apply-form .btn { margin-top: 8px; align-self: flex-start; }
 .apply-note { font-size: 0.85rem; color: var(--blue); margin-top: 14px; min-height: 1em; }
 .apply-note.note-error, .waitlist-note.note-error { color: #f87171; font-weight: 600; }
