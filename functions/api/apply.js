@@ -23,7 +23,7 @@ async function sendNotificationEmail(env, subject, html) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: env.NOTIFY_FROM || "Tokeniz Notifications <notifications@tokeniz.ai>",
+        from: env.NOTIFY_FROM || "Tokeniz Notifications <notifications@mail.tokeniz.ai>",
         to: env.NOTIFY_EMAIL || "hello@tokeniz.ai",
         subject,
         html,
