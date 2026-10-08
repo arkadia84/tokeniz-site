@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@font-face{font-family:Inter;font-weight:500;src:url(node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:Inter;font-weight:700;src:url(node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:Inter;font-weight:800;src:url(node_modules/@fontsource/inter/files/inter-latin-800-normal.woff2) format('woff2')}
+@font-face{font-family:Inter;font-weight:900;src:url(node_modules/@fontsource/inter/files/inter-latin-900-normal.woff2) format('woff2')}
+
+:root{
+  /* NIFTY FOUNDER — blue */
+  --nf-bg:#0b1220; --nf-bg2:#101a30; --nf-accent:#3b82f6; --nf-accent2:#60a5fa; --nf-text:#f3f6fb; --nf-muted:#9fb0cc; --nf-line:rgba(159,176,204,.18);
+  /* ATOMISE — emerald on near-black */
+  --at-bg:#0a0a0c; --at-bg2:#101014; --at-accent:#34d399; --at-amber:#f59e0b; --at-purple:#a78bfa; --at-text:#f4f4f5; --at-muted:#a1a1aa; --at-line:rgba(255,255,255,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1350px;overflow:hidden;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.card{position:relative;width:1080px;height:1350px;padding:88px 84px;display:flex;flex-direction:column;justify-content:space-between;color:var(--text);background:
+  radial-gradient(900px 700px at 100% 0%, var(--glow) 0%, transparent 60%),
+  linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%);}
+.card::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(800px 900px at 50% 40%,#000 30%,transparent 100%);opacity:.55;pointer-events:none}
+.card>*{position:relative}
+
+/* brand themes */
+.nifty{--bg:var(--nf-bg);--bg2:var(--nf-bg2);--accent:var(--nf-accent);--accent2:var(--nf-accent2);--text:var(--nf-text);--muted:var(--nf-muted);--line:var(--nf-line);--glow:rgba(59,130,246,.28)}
+.atomise{--bg:var(--at-bg);--bg2:var(--at-bg2);--accent:var(--at-accent);--accent2:#6ee7b7;--text:var(--at-text);--muted:var(--at-muted);--line:var(--at-line);--glow:rgba(52,211,153,.22)}
+
+/* header */
+.head{display:flex;align-items:center;justify-content:space-between}
+.wordmark{display:flex;align-items:center;gap:18px;font-weight:800;font-size:40px;letter-spacing:-.02em;color:var(--text)}
+.wordmark .hi{color:var(--accent)}
+.logo{width:56px;height:56px;flex:none}
+.pill{font-weight:700;font-size:22px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:2px solid var(--accent);border-radius:999px;padding:12px 22px;background:rgba(0,0,0,.25)}
+
+/* body */
+.body{flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px;padding:40px 0}
+.kicker{font-weight:700;font-size:26px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+h1{font-weight:900;font-size:96px;line-height:1.02;letter-spacing:-.035em;color:var(--text);text-wrap:balance}
+h1 em{font-style:normal;color:var(--accent)}
+h1.sm{font-size:80px}
+h1.xs{font-size:66px}
+.sub{font-weight:500;font-size:36px;line-height:1.35;color:var(--muted);max-width:860px}
+.bar{width:120px;height:8px;border-radius:4px;background:var(--accent)}
+
+/* quote variant */
+.quote .mark{font-weight:900;font-size:220px;line-height:.6;color:var(--accent);margin-bottom:10px}
+.quote h1{font-size:72px;font-weight:800;line-height:1.12;letter-spacing:-.025em}
+.quote .who{font-weight:700;font-size:30px;color:var(--text)}
+.quote .who span{display:block;font-weight:500;font-size:26px;color:var(--muted);margin-top:6px}
+
+/* footer */
+.foot{display:flex;align-items:flex-end;justify-content:space-between;border-top:2px solid var(--line);padding-top:34px}
+.foot .handle{font-weight:700;font-size:28px;color:var(--text)}
+.foot .site{font-weight:500;font-size:26px;color:var(--muted)}
+.foot .num{font-weight:800;font-size:26px;color:var(--accent);letter-spacing:.06em}
+</style>
+</head>
+<body>
+<div id="card" class="card {{brand}} {{variant}}">
+  <div class="head">
+    <div class="wordmark">{{logo}}<span>{{wordmark}}</span></div>
+    <div class="pill">{{pill}}</div>
+  </div>
+  <div class="body">{{body}}</div>
+  <div class="foot">
+    <div><div class="handle">{{handle}}</div><div class="site">{{site}}</div></div>
+    <div class="num">{{num}}</div>
+  </div>
+</div>
+</body>
+</html>
