@@ -3,8 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Ocean Views</title>
+<title>The Ocean Views Marketplace</title>
 <meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Wake up above the ocean in Uluwatu, Bali. Choose your apartment, sign online and receive your digital title.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tokeniz.ai/oceanviews/">
+<meta property="og:site_name" content="The Ocean Views">
+<meta property="og:title" content="The Ocean Views Marketplace · Powered by Propex">
+<meta property="og:description" content="Wake up above the ocean in Uluwatu, Bali. Choose your apartment, sign online and receive your digital title.">
+<meta property="og:image" content="https://tokeniz.ai/oceanviews/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Ocean Views Marketplace, powered by Propex, over a sunset on the Uluwatu coast">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Ocean Views Marketplace · Powered by Propex">
+<meta name="twitter:description" content="Wake up above the ocean in Uluwatu, Bali. Choose your apartment, sign online and receive your digital title.">
+<meta name="twitter:image" content="https://tokeniz.ai/oceanviews/img/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
@@ -160,22 +174,22 @@ footer p{margin:0}
     </div></figcaption>
   </figure>
   <figure>
-    <img class="shot" id="img-living" alt="Living and dining room with a Balinese painting" loading="lazy" src="img/living.webp">
+    <img class="shot" id="img-living" alt="Shaded terrace with a table and loungers facing a turquoise sea" loading="lazy" src="img/terrace.webp">
     <figcaption><div class="cap" data-cap="living">
-      <p class="eyebrow">Your living room</p>
+      <p class="eyebrow">Resort life</p>
       <h2>Space to slow down.</h2>
       <p>One, two and three bedroom apartments, fully managed on site by a family team with 15 years of experience.</p>
     </div></figcaption>
   </figure>
   <figure>
-    <img class="shot" id="img-bed2" alt="Bedroom with glass doors looking out to the sea" loading="lazy" src="img/bed2.webp">
+    <img class="shot" id="img-bed2" alt="Edge of an infinity pool meeting the open sea" loading="lazy" src="img/pool.webp">
     <figcaption><div class="cap" data-cap="bed2">
-      <p class="eyebrow">Your view</p>
-      <h2>The sea, from your pillow.</h2>
+      <p class="eyebrow">The pool</p>
+      <h2>Where the pool meets the sea.</h2>
     </div></figcaption>
   </figure>
   <figure>
-    <img class="shot" id="img-tower" alt="Tower 1 lit at dusk" loading="lazy" src="img/tower.webp">
+    <img class="shot" id="img-tower" alt="Infinity pool at dusk with palms on the horizon" loading="lazy" src="img/dusk.webp">
     <figcaption><div class="cap" data-cap="returns">
       <p class="eyebrow">Why Uluwatu</p>
       <h2>Among Bali's <em>strongest</em> returns.</h2>
@@ -224,7 +238,7 @@ footer p{margin:0}
   </div>
 </section>
 
-<footer><p>Illustrative preview. Details subject to confirmation. Not an offer to sell.</p><p style="margin-top:6px;opacity:.7">Landscape photography from Unsplash: Steph Smith, Tom Donders, bckfwd, Courtney Bailey.</p></footer>
+<footer><p>Illustrative preview. Details subject to confirmation. Not an offer to sell.</p><p style="margin-top:6px;opacity:.7">Landscape photography from Unsplash: Steph Smith, Tom Donders, bckfwd, Courtney Bailey, Rosemary Media, Alix Greenman.</p></footer>
 
 <script>
 (function(){
@@ -328,9 +342,9 @@ S.sunset=new Shot('sunset',{inside:S.bed});
 S.dawn=new Shot('dawn',{focus:[.42,.5]});
 S.morning=new Shot('morning',{focus:[.64,.55]});
 S.midday=new Shot('midday',{focus:[.38,.5]});
-S.living=new Shot('living',{rect:{L:.25,R:.80,T:.14,B:.70},vp:[.60,.52],focus:[.66,.6]});
-S.bed2=new Shot('bed2',{rect:{L:.36,R:.99,T:.06,B:.84},vp:[.76,.48],focus:[.84,.5]});
-S.tower=new Shot('tower',{focus:[.62,.5]});
+S.living=new Shot('living',{focus:[.42,.55]});
+S.bed2=new Shot('bed2',{focus:[.62,.6]});
+S.tower=new Shot('tower',{focus:[.40,.5]});
 var layers=$('#layers');
 ['bed','sunset','midday','morning','dawn','living','bed2','tower'].forEach(function(k,i){S[k].z=i+1});
 /* pictures load two at a time in the order the scroll needs them, so the first screen appears at once */
@@ -437,8 +451,8 @@ function frame(now){
   var aDawn=1-sstep(.55,.95,u), mDawn=track(u,[[0,1.26],[.95,1.10]]);
   var aMorn=1-sstep(1.4,1.8,u), mMorn=track(u,[[.5,1.24],[1.8,1.06]]);
   var aMid=1-sstep(2.25,2.65,u), mMid=track(u,[[1.35,1.24],[2.65,1.06]]);
-  var aLiv=sstep(4.7,5.05,u), mLiv=track(u,[[4.7,1.7],[6.15,1],[19,1]]);
-  var aB2=sstep(6.2,6.55,u), mB2=track(u,[[6.2,1.6],[7.45,1],[19,1]]);
+  var aLiv=sstep(4.7,5.05,u), mLiv=track(u,[[4.7,1.3],[6.6,1.04],[19,1.04]]);
+  var aB2=sstep(6.2,6.55,u), mB2=track(u,[[6.2,1.3],[7.9,1.04],[19,1.04]]);
   var aTow=sstep(7.5,7.85,u), mTow=track(u,[[7.5,1.22],[END,1.02]]);
 
   if(useGL)gl.clear(gl.COLOR_BUFFER_BIT);else for(var q in S)S[q].used=false;
